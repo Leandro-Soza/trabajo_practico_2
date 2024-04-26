@@ -2,11 +2,11 @@ package ar.edu.unju.fi.ejercicio3.constantes;
 
 public enum Provincia {
 	JUJUY(811611, 53291),
-	SALTA(1440000, 155488),
-	TUCUMAN(1730000, 22524),
-	CATAMARCA(430000, 102602),
-	LA_RIOJA(380000, 89680),
-	SANTIAGO_DEL_ESTERO(106000, 136351);
+	SALTA(1441351, 155488),
+	TUCUMAN(1731820, 22524),
+	CATAMARCA(429562, 102602),
+	LA_RIOJA(383865, 89680),
+	SANTIAGO_DEL_ESTERO(1060906, 136351);
 	
 	private Integer cantidadPob;
 	private Integer superficie;
@@ -27,8 +27,8 @@ public enum Provincia {
 		return superficie;
 	}
 
-	public Double calcularDensidadPoblacion() {
-		return (double) (this.getCantidadPob()/this.getSuperficie());
+	public Float calcularDensidadPoblacion() {
+		return cantidadPob/(float)superficie;
 	}
 	
 }
