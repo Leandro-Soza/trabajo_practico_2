@@ -43,6 +43,7 @@ public class Jugador {
 				"\nAltura=" + alturaJug + 
 				"\nPeso=" + pesoJug + 
 				"\nPosición=" + posicionJug;
+		
 	}
 
 
