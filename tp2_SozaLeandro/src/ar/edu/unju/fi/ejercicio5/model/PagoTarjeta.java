@@ -1,7 +1,7 @@
 package ar.edu.unju.fi.ejercicio5.model;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import ar.edu.unju.fi.ejercicio5.interfaces.Pago;
 
@@ -62,18 +62,18 @@ public class PagoTarjeta implements Pago {
 
 	@Override
 	public void realizarPago(double monto) {
-		double recarga;
-		recarga=monto*(15/100);
-		setMontoPagado(getMontoPagado()+recarga);
+		double recarga=0, rec=10;
+		recarga=monto*(rec/100);
+		setMontoPagado(monto+recarga);
 	}
 
 	@Override
 	public void imprimirRecibo() {
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yy");
+		String fecha=LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yy"));
 		System.out.println("*****DATOS DE RECIBO*****");
 		System.out.println("Número de tarjeta: "+getNumeroTarjeta());
-		System.out.println("Fecha de pago: "+formato.format(fechaPago));
-		System.out.println("Monto pagado: "+getMontoPagado());
+		System.out.println("Fecha de pago: "+fecha);
+		System.out.println("Monto pagado: $"+getMontoPagado());
 		System.out.println("--------------------");
 	}
 

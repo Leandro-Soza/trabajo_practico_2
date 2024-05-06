@@ -4,10 +4,10 @@ package ar.edu.unju.fi.ejercicio5.model;
 public class Producto {
 	private Integer codigoProd;
 	private String descripcionProd;
-	private Float precioUnit;
-	private boolean estadoProd;
+	private Integer precioUnit;
 	private OrigenFab origenFab;
 	private Categoria categoriaProd;
+	private boolean estadoProd;
 	
 	public enum OrigenFab {
 		ARGENTINA, CHINA, BRASIL, URUGUAY
@@ -20,15 +20,17 @@ public class Producto {
 	public Producto() {
 	}
 
-	public Producto(Integer codigoProd, String descripcionProd, Float precioUnit, boolean estadoProd,
-			OrigenFab origenFab, Categoria categoriaProd) {
+	public Producto(Integer codigoProd, String descripcionProd, Integer precioUnit,
+			OrigenFab origenFab, Categoria categoriaProd,  boolean estadoProd) {
 		this.codigoProd = codigoProd;
 		this.descripcionProd = descripcionProd;
 		this.precioUnit = precioUnit;
-		this.estadoProd = estadoProd;
 		this.origenFab = origenFab;
 		this.categoriaProd = categoriaProd;
+		this.estadoProd = estadoProd;
 	}
+
+	
 
 	public Integer getCodigoProd() {
 		return codigoProd;
@@ -46,20 +48,12 @@ public class Producto {
 		this.descripcionProd = descripcionProd;
 	}
 
-	public Float getPrecioUnit() {
+	public Integer getPrecioUnit() {
 		return precioUnit;
 	}
 
-	public void setPrecioUnit(Float precioUnit) {
+	public void setPrecioUnit(Integer precioUnit) {
 		this.precioUnit = precioUnit;
-	}
-
-	public boolean isEstadoProd() {
-		return estadoProd;
-	}
-
-	public void setEstadoProd(boolean estadoProd) {
-		this.estadoProd = estadoProd;
 	}
 
 	public OrigenFab getOrigenFab() {
@@ -76,6 +70,21 @@ public class Producto {
 
 	public void setCategoriaProd(Categoria categoriaProd) {
 		this.categoriaProd = categoriaProd;
+	}
+
+	public boolean isEstadoProd() {
+		return estadoProd;
+	}
+
+	public void setEstadoProd(boolean estadoProd) {
+		this.estadoProd = estadoProd;
+	}
+
+	@Override
+	public String toString() {
+		return "Producto=" + codigoProd + "; Descripción=" + descripcionProd + "; Precio=$"
+				+ precioUnit + "; Origen=" + origenFab + "; Categoria=" + categoriaProd + "; Estado="
+				+ estadoProd;
 	}
 	
 	
